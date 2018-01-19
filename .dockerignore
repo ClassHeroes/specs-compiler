@@ -1,0 +1,6 @@
+.direnv
+.envrc
+.git
+.gitignore
+ci
+Makefile
