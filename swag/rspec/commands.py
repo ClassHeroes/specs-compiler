@@ -25,7 +25,7 @@ def rspec_compile(urn, source, destination):
         data = yaml.load(file)
     if data['swagger'] != '2.0':
         raise ValueError('swagger 2.0 only')
-    definitions = data['definitions']
+    definitions = data.get('definitions', {})
     for name, operations in data['paths'].items():
         dest_dir = destination / os.path.splitext(urn)[0]
         os.makedirs(dest_dir, exist_ok=True)
